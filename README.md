@@ -60,4 +60,4 @@ If you plan to contribute to this configuration (e.g., for a shared dotfiles set
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details. *(Note: If you have a specific license, make sure to include a LICENSE file in your repository.)*
+This project is licensed under the MIT License - see the LICENSE file for details.
