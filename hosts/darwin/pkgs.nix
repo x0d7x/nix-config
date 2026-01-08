@@ -5,10 +5,10 @@
   ...
 }:
 let
-  inherit (inputs) nixpkgs;
+  inherit (inputs) nixpkgs ghostty;
 in
 {
-  nixpkgs.config.allowUnfree = true;
+
   environment.systemPackages = with pkgs; [
 
     # CLI Tools & Utilities
@@ -28,7 +28,6 @@ in
     lazygit
     gnupg
     mas
-    opencode
     pass
     pipx
     mkalias
@@ -48,7 +47,6 @@ in
     tmux
     fontconfig
     mpv
-    gemini-cli
 
     # Development & Build Tools
     bun
@@ -70,7 +68,7 @@ in
     aerospace
     keycastr
     kitty
-    # ghostty
+    ghostty.packages.${pkgs.system}.default
     neovim
     obsidian
     raycast
