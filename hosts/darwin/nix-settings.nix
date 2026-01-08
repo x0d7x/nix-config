@@ -28,8 +28,6 @@
       #   };
       # };
     };
-    # This line is a prerequisite
-    settings.trusted-users = [ "@admin" ];
     channel.enable = false;
   };
   system.stateVersion = 6;

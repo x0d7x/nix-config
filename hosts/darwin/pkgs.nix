@@ -5,7 +5,7 @@
   ...
 }:
 let
-  inherit (inputs) nixpkgs ghostty;
+  inherit (inputs) nixpkgs;
 in
 {
 
@@ -68,7 +68,6 @@ in
     aerospace
     keycastr
     kitty
-    ghostty.packages.${pkgs.system}.default
     neovim
     obsidian
     raycast

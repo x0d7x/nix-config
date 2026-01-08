@@ -25,8 +25,6 @@
           ;
       };
       modules = [
-        # Allow unfree packages.
-        { nixpkgs.config.allowUnfree = true; }
         ../hosts/darwin/pkgs.nix
         ../hosts/darwin/settings.nix
         ../hosts/darwin/services.nix
