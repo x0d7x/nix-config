@@ -48,6 +48,7 @@ in
     tmux
     fontconfig
     mpv
+    gemini-cli
 
     # Development & Build Tools
     bun
