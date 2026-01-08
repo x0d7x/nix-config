@@ -1,3 +1,5 @@
+{ ... }:
+
 {
   system.defaults.CustomUserPreferences = {
     "com.apple.finder" = {

@@ -1,3 +1,5 @@
+{ username, pkgs, ... }:
+
 {
   users.users.dox.shell = pkgs.zsh;
   users.users.dox.home = "/Users/${username}";

@@ -1,4 +1,11 @@
 {
+  inputs,
+  config,
+  system,
+  ...
+}:
+
+{
   nix = {
     settings = {
       experimental-features = [
