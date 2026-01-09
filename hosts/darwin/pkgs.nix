@@ -65,7 +65,6 @@ in
 
     # GUI Applications
     alt-tab-macos
-    aerospace
     keycastr
     kitty
     neovim

@@ -23,6 +23,10 @@ in
     enable = true;
     package = sketchybar;
   };
+  services.aerospace = {
+    enable = true;
+    package = aerospace;
+  };
 
   # All launchd agents
   launchd.user.agents = {

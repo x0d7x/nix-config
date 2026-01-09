@@ -1,8 +1,10 @@
 { username, pkgs, ... }:
 
 {
-  users.users.dox.shell = pkgs.zsh;
-  users.users.dox.home = "/Users/${username}";
+  users.users."${username}" = {
+    shell = pkgs.zsh;
+    home = "/Users/${username}";
+  };
   programs.zsh = {
     enable = true;
     promptInit = ''
