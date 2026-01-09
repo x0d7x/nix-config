@@ -23,23 +23,9 @@ in
     enable = true;
     package = sketchybar;
   };
-  services.aerospace = {
-    enable = true;
-    package = aerospace;
-  };
 
   # All launchd agents
   launchd.user.agents = {
-    aerospace = {
-      serviceConfig = {
-        Label = "user.aerospace";
-        ProgramArguments = [ "${aerospace}/bin/aerospace" ];
-        RunAtLoad = true;
-        KeepAlive = true;
-        StandardOutPath = "${home}/.local/state/aerospace-out.log";
-        StandardErrorPath = "${home}/.local/state/aerospace-err.log";
-      };
-    };
     aldente = {
       serviceConfig = {
         Label = "user.aldente";

@@ -16,5 +16,6 @@ in
     ./nix-settings.nix
     ./shell.nix
     ./macos-defaults.nix
+    ./aerospace.nix
   ];
 }

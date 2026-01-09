@@ -2,6 +2,7 @@
   inputs,
   config,
   system,
+  username,
   ...
 }:
 
@@ -32,7 +33,7 @@
   };
   system.stateVersion = 6;
 
-  system.primaryUser = "dox";
+  system.primaryUser = "${username}";
   nixpkgs = {
     config.allowUnfree = true;
     hostPlatform = system;
