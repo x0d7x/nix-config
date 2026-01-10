@@ -26,7 +26,7 @@
 
       on-focus-changed = [
         "move-mouse window-lazy-center"
-        "exec-and-forget ~/.config/scripts/sticky.sh"
+        "exec-and-forget ~/.local/bin/sticky"
       ];
 
       exec-on-workspace-change = [
@@ -78,7 +78,7 @@
         alt-shift-t = "move-node-to-workspace T";
         alt-shift-n = "move-node-to-workspace N";
         alt-shift-g = "move-node-to-workspace G";
-        alt-shift-w = "exec-and-forget ~/.config/scripts/chbg.sh";
+        alt-shift-w = "exec-and-forget ~/.local/bin/chbg";
         alt-tab = "workspace-back-and-forth";
         alt-shift-tab = "move-workspace-to-monitor --wrap-around next";
         alt-shift-semicolon = "mode service";

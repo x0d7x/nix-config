@@ -42,7 +42,7 @@ in
     uv
     wget
     yt-dlp
-    zinit
+    zsh-powerlevel10k
     zoxide
     tmux
     fontconfig
@@ -84,5 +84,5 @@ in
     nerd-fonts.gohufont
   ];
 
-  # environment.variables.PATH = "${pkgs.mpv}/bin:${pkgs.qutebrowser}/bin:${config.environment.systemPath}";
+  # environment.variables.PATH = "${config.environment.systemPath}";
 }
