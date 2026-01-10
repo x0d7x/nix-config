@@ -1,6 +1,7 @@
 # Dox Nix-Darwin Configuration
 
 This repository contains my personal Nix-Darwin configuration for macOS. It leverages the power of Nix and nix-darwin to declaratively manage system settings, installed packages, running services, and even the macOS Dock. This approach ensures a reproducible and consistent development environment across different macOS machines.
+
 [![Desktop Screenshot](https://i.imgur.com/byek2K0.jpeg)](https://i.imgur.com/byek2K0.jpeg)
 
 ## Features

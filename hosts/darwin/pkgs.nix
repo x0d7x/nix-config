@@ -42,7 +42,6 @@ in
     uv
     wget
     yt-dlp
-    zsh-powerlevel10k
     zoxide
     tmux
     fontconfig
