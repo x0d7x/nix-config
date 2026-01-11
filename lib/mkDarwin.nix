@@ -1,7 +1,6 @@
 {
   inputs,
   outputs,
-  stateVersion,
   ...
 }:
 {
@@ -29,6 +28,7 @@
         ../hosts/darwin/settings.nix
         ../hosts/darwin/services.nix
         ../hosts/darwin/dock.nix
+        ../apps/config.nix
       ];
     };
 }

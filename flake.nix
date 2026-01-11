@@ -16,14 +16,12 @@
       ...
     }:
     let
-      stateVersion = 6;
       inherit (self) outputs;
       libx = import ./lib/mkDarwin.nix {
         inherit
           inputs
           nixpkgs
           outputs
-          stateVersion
           ;
       };
     in

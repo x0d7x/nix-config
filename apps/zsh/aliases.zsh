@@ -23,7 +23,7 @@ alias mpt="mpv --vo=tct --quiet --really-quiet"
 alias rec='asciinema rec'
 alias aggif="agg --font-family 'JetBrainsMono Nerd Font Mono,NotoColorEmoji'"
 alias asp="asciinema play"
-alias opco="opencode"
+alias opc="opencode"
 alias kitty-theme='tmux detach-client; kitty +kitten themes'
 # Bun Aliases
 alias bni="bun install"

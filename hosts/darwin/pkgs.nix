@@ -43,7 +43,7 @@ in
     wget
     yt-dlp
     zoxide
-    tmux
+    # tmux
     fontconfig
     mpv
 

@@ -13,8 +13,7 @@ let
 in
 {
   imports = [
-    ./nix-settings.nix
-    ./macos-defaults.nix
-    ./aerospace.nix
+    ./shell.nix
+    ./tmux.nix
   ];
 }
