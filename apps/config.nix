@@ -13,7 +13,7 @@ let
 in
 {
   imports = [
-    ./shell.nix
-    ./tmux.nix
+    ./zsh/shell.nix
+    ./tmux/tmux.nix
   ];
 }

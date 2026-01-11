@@ -16,9 +16,9 @@
     enableFastSyntaxHighlighting = true;
     interactiveShellInit = lib.strings.concatStrings (
       lib.strings.intersperse "\n" ([
-        (builtins.readFile ./zsh/.zshrc)
-        (builtins.readFile ./zsh/aliases.zsh)
-        (builtins.readFile ./zsh/fzf.zsh)
+        (builtins.readFile ./.zshrc)
+        (builtins.readFile ./aliases.zsh)
+        (builtins.readFile ./fzf.zsh)
         "source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.zsh"
         "source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
         ''
