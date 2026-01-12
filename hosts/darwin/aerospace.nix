@@ -19,7 +19,7 @@
 
       # Freeform TOML-style configuration
       after-startup-command = [
-        "exec-and-forget /run/current-system/sw/bin/sketchybar"
+        "exec-and-forget ${pkgs.sketchybar}/bin/sketchybar"
       ];
 
       on-focused-monitor-changed = [ "move-mouse monitor-lazy-center" ];
@@ -32,10 +32,7 @@
       exec-on-workspace-change = [
         "/bin/bash"
         "-c"
-        "/run/current-system/sw/bin/sketchybar --trigger
-     aerospace_workspace_change
-     FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE
-     PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE"
+        "${pkgs.sketchybar}/bin/sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE"
       ];
 
       gaps = {

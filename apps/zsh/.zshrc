@@ -1,48 +1,53 @@
- if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
- source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
- fi
- [ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
- plug "TunaCuma/zsh-vi-man"
- setopt autocd
- setopt correct
- setopt interactivecomments
- setopt magicequalsubst
- setopt nonomatch
- setopt notify
- setopt numericglobsort
- setopt promptsubst
- setopt appendhistory
- setopt sharehistory
- setopt hist_ignore_space
- setopt hist_ignore_all_dups
- setopt hist_save_no_dups
- setopt hist_ignore_dups
- setopt hist_find_no_dups
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+if [ ! -d "${XDG_DATA_HOME:-$HOME/.local/share}/zap" ]; then
+git clone -b release-v1 https://github.com/zap-zsh/zap.git "${ XDG_DATA_HOME:-$HOME/.local/share}/zap"
+fi
+[ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
+plug "TunaCuma/zsh-vi-man"
+plug "zsh-users/zsh-autosuggestions"
+plug "Aloxaf/fzf-tab"
+setopt autocd
+setopt correct
+setopt interactivecomments
+setopt magicequalsubst
+setopt nonomatch
+setopt notify
+setopt numericglobsort
+setopt promptsubst
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
 # Environment Variables
- export GPG_TTY=$TTY
- export EDITOR=nvim
- export VISUAL=nvim
+export GPG_TTY=$TTY
+export EDITOR=nvim
+export VISUAL=nvim
 # export ZVM_MAN_PAGER='bat'
- export SUDO_EDITOR=nvim
- export FCEDIT=nvim
+export SUDO_EDITOR=nvim
+export FCEDIT=nvim
 # Set unique PATH entries with correct order
- path+=(
- $HOME/.local/bin
- $HOME/.bun/bin
- )
- typeset -gU path
- export PATH
+path+=(
+$HOME/.local/bin
+$HOME/.bun/bin
+)
+typeset -gU path
+export PATH
 # ZSH Keybindings
- bindkey -v
- bindkey '^p' history-search-backward
- bindkey '^n' history-search-forward
+bindkey -v
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
 # History Configuration
- HISTSIZE=10000
- HISTFILE=$HOME/.zsh_history
- SAVEHIST=$HISTSIZE
- HISTDUP=erase
- eval "$(zoxide init zsh)" 
- eval "$(fzf --zsh)"
+HISTSIZE=10000
+HISTFILE=$HOME/.zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+eval "$(zoxide init zsh)" 
+eval "$(fzf --zsh)"
 # Set zstyle
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' menu no

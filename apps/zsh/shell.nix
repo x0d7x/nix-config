@@ -17,21 +17,9 @@
     interactiveShellInit = lib.strings.concatStrings (
       lib.strings.intersperse "\n" ([
         (builtins.readFile ./.zshrc)
-        (builtins.readFile ./aliases.zsh)
-        (builtins.readFile ./fzf.zsh)
-        "source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.zsh"
-        "source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
-        ''
-          # # --- injected by nix-darwin: zz (yazi helper) ---
-            function zz() {
-              local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-              ${pkgs.yazi}/bin/yazi "$@" --cwd-file="$tmp"
-              if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-                builtin cd -- "$cwd"
-              fi
-              rm -f -- "$tmp"
-            }
-        ''
+        (builtins.readFile ./aliases)
+        (builtins.readFile ./fzf)
+        (builtins.readFile ./func)
       ])
     );
     promptInit = ''

@@ -32,4 +32,4 @@ alias bnd="bun run dev"
 alias bnc="bun create"
 alias bnrm="bun remove"
 # nix aliases
-alias nixsw="sudo darwin-rebuild switch --flake .#dox"
+alias nsw="sudo darwin-rebuild switch --flake .#dox"

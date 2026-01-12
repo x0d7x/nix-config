@@ -28,6 +28,7 @@ in
     lazygit
     gnupg
     mas
+    yazi
     pass
     pipx
     mkalias
@@ -43,7 +44,6 @@ in
     wget
     yt-dlp
     zoxide
-    # tmux
     fontconfig
     mpv
 
