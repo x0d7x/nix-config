@@ -55,7 +55,5 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza --tree --color=always $realpath'
 zstyle ':fzf-tab:*' use-fzf-default-opts yes
 # Auto-start tmux if available and not already in a session
-if command -v tmux >/dev/null 2>&1 && [ -z "$TMUX" ] && ! tmux has-session 2>/dev/null; then
-  exec tmux new-session -s Dev
-fi
+command -v tmux >/dev/null 2>&1 && [ -z "$TMUX" ] && ! tmux has-session 2>/dev/null && exec tmux new-session -s Dev
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

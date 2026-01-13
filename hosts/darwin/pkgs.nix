@@ -12,6 +12,7 @@ in
   environment.systemPackages = with pkgs; [
 
     # CLI Tools & Utilities
+    # man
     asciinema-agg
     bat
     btop
@@ -21,59 +22,63 @@ in
     eza
     fastfetch
     fd
+    ffmpeg
+    fontconfig
     fx
     fzf
+    git
     gitleaks
+    gnupg
     jq
     lazygit
-    gnupg
     mas
-    yazi
+    mkalias
+    mpd
+    mpv
     pass
     pipx
-    mkalias
-    xcode-install
     ripgrep
+    rmpc
     rsync
     stow
     tldr
     tokei
     tree
-    git
     uv
     wget
+    xcode-install
+    yazi
     yt-dlp
     zoxide
-    fontconfig
-    mpv
 
     # Development & Build Tools
     bun
+    eslint_d
     flutter
     go
-    jujutsu
-    nixfmt-rfc-style
-    rustup
-    typescript-language-server
-    prettierd
-    gosimports
-    lua-language-server
-    eslint_d
-    tailwindcss-language-server
     golangci-lint
+    gosimports
+    jujutsu
+    lua-language-server
+    nixfmt-rfc-style
+    prettierd
+    rustup
+    tailwindcss-language-server
+    typescript-language-server
 
     # GUI Applications
+    # vivaldi
     alt-tab-macos
+    appcleaner
+    brave
     keycastr
     kitty
     neovim
     obsidian
-    raycast
-    wezterm
-    vesktop
-    appcleaner
-    brave
     qutebrowser
+    raycast
+    vesktop
+    wezterm
   ];
 
   # Nerd Fonts

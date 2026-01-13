@@ -7,7 +7,7 @@
 {
   services.aerospace = {
     enable = true;
-    package = pkgs.aerospace;
+    # package = pkgs.aerospace;
     settings = {
       # Core options with structured nix-darwin settings
       enable-normalization-flatten-containers = true;
@@ -144,6 +144,10 @@
           "if".window-title-regex-substring = "Picture-in-Picture";
           check-further-callbacks = true;
           run = "layout floating";
+        }
+        {
+          "if".app-id = "com.vivaldi.Vivaldi";
+          run = "move-node-to-workspace B";
         }
         {
           "if".app-id = "app.zen-browser.zen";

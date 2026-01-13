@@ -9,21 +9,22 @@
 let
   home = "/Users/${username}";
 
-  aerospace = pkgs.aerospace;
   aldente = pkgs.aldente;
   hidden-bar = pkgs.hidden-bar;
   mpd = pkgs.mpd;
   shottr = pkgs.shottr;
-  sketchybar = pkgs.sketchybar;
-  karabiner = pkgs.karabiner-elements;
 in
 {
   # Services & Daemons
   services.sketchybar = {
     enable = true;
-    package = sketchybar;
   };
-
+  # nix darwin need to deal with 15v to make the grabber lunch agent work
+  # a PR of the  fix in my repo github.com:x0d7x/nix-darwin.git
+  # services.karabiner-elements = {
+  #   enable = true;
+  # };
+  programs.man.enable = true;
   # All launchd agents
   launchd.user.agents = {
     aldente = {
@@ -33,18 +34,6 @@ in
           "open"
           "-a"
           "${aldente}/Applications/AlDente.app"
-        ];
-        RunAtLoad = true;
-        KeepAlive = false;
-      };
-    };
-    karabiner-elements = {
-      serviceConfig = {
-        Label = "user.karabiner-elements";
-        ProgramArguments = [
-          "open"
-          "-a"
-          "${karabiner}/Applications/karabiner-elements.app"
         ];
         RunAtLoad = true;
         KeepAlive = false;
@@ -72,6 +61,11 @@ in
         ];
         RunAtLoad = true;
         KeepAlive = true;
+        StandardErrorPath = "${home}/.local/share/mpd/launchd.log";
+        StandardOutPath = "${home}/.local/share/mpd/launchd.log";
+        EnvironmentVariables = {
+          HOME = "${home}";
+        };
       };
     };
     shottr = {
@@ -93,10 +87,7 @@ in
       allPkgs = config.environment.systemPackages ++ [
         aldente
         hidden-bar
-        mpd
         shottr
-        sketchybar
-        karabiner
       ];
       env = pkgs.buildEnv {
         name = "system-applications";

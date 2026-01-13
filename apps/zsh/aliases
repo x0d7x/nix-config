@@ -33,3 +33,4 @@ alias bnc="bun create"
 alias bnrm="bun remove"
 # nix aliases
 alias nsw="sudo darwin-rebuild switch --flake .#dox"
+alias nfu="nix flake update"
