@@ -1,13 +1,13 @@
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-if [ ! -d "${XDG_DATA_HOME:-$HOME/.local/share}/zap" ]; then
-git clone -b release-v1 https://github.com/zap-zsh/zap.git "${ XDG_DATA_HOME:-$HOME/.local/share}/zap"
-fi
+if [[ -o interactive ]]; then
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+# source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
+[ ! -d "${XDG_DATA_HOME:-$HOME/.local/share}/zap" ] && git clone -b release-v1 https://github.com/zap-zsh/zap.git "${XDG_DATA_HOME:-$HOME/.local/share}/zap"
 [ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
 plug "TunaCuma/zsh-vi-man"
 plug "zsh-users/zsh-autosuggestions"
 plug "Aloxaf/fzf-tab"
+fi
 setopt autocd
 setopt correct
 setopt interactivecomments
@@ -46,6 +46,7 @@ HISTSIZE=10000
 HISTFILE=$HOME/.zsh_history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
+# start bin
 eval "$(zoxide init zsh)" 
 eval "$(fzf --zsh)"
 # Set zstyle
@@ -56,4 +57,4 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza --tree --color=always $
 zstyle ':fzf-tab:*' use-fzf-default-opts yes
 # Auto-start tmux if available and not already in a session
 command -v tmux >/dev/null 2>&1 && [ -z "$TMUX" ] && ! tmux has-session 2>/dev/null && exec tmux new-session -s Dev
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

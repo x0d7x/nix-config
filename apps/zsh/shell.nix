@@ -16,14 +16,15 @@
     enableFastSyntaxHighlighting = true;
     interactiveShellInit = lib.strings.concatStrings (
       lib.strings.intersperse "\n" ([
-        (builtins.readFile ./.zshrc)
         (builtins.readFile ./aliases)
         (builtins.readFile ./fzf)
         (builtins.readFile ./func)
+        (builtins.readFile ./.zshrc)
       ])
     );
     promptInit = ''
-      source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+      #   source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+      eval "$(starship init zsh)"
     '';
 
   };

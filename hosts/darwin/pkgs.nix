@@ -50,10 +50,11 @@ in
     yazi
     yt-dlp
     zoxide
-
+    starship
     # Development & Build Tools
     bun
     eslint_d
+    fnm
     flutter
     go
     golangci-lint
@@ -61,6 +62,7 @@ in
     jujutsu
     lua-language-server
     nixfmt-rfc-style
+    nodejs
     prettierd
     rustup
     tailwindcss-language-server
@@ -78,6 +80,7 @@ in
     qutebrowser
     raycast
     vesktop
+    karabiner-elements
     wezterm
   ];
 
