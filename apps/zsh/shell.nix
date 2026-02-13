@@ -23,9 +23,8 @@
       ])
     );
     promptInit = ''
-      #   source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
-      eval "$(starship init zsh)"
+      source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+      # eval "$(starship init zsh)"
     '';
-
   };
 }

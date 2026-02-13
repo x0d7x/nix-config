@@ -7,6 +7,7 @@
     nix-darwin.url = "github:nix-darwin/nix-darwin/nix-darwin-25.05";
     # nix-darwin.url = "github:x0d7x/nix-darwin/fix-karabiner-v15";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    komorebi.url = "github:LGUG2Z/komorebi-for-mac/6e324b63cc475d8b53d38c007732c3caafe2730a";
   };
 
   outputs =
@@ -14,6 +15,7 @@
       self,
       nix-darwin,
       nixpkgs,
+      komorebi,
       ...
     }:
     let

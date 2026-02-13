@@ -15,6 +15,8 @@ in
   imports = [
     ./nix-settings.nix
     ./macos-defaults.nix
-    ./aerospace.nix
+    ./komorebi.nix
+    # ./aerospace.nix
+    # ./hammerspoon.nix
   ];
 }

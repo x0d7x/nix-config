@@ -24,6 +24,13 @@
           ;
       };
       modules = [
+        (
+          { pkgs, ... }:
+          {
+            nixpkgs.overlays = [ inputs.komorebi.overlays.default ];
+          }
+        )
+        inputs.komorebi.darwinModules.komorebi
         ../hosts/darwin/pkgs.nix
         ../hosts/darwin/settings.nix
         ../hosts/darwin/services.nix

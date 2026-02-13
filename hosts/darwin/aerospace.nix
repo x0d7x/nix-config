@@ -6,7 +6,7 @@
 
 {
   services.aerospace = {
-    enable = true;
+    # enable = true;
     # package = pkgs.aerospace;
     settings = {
       # Core options with structured nix-darwin settings

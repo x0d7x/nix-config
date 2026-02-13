@@ -36,7 +36,6 @@ in
     mpd
     mpv
     pass
-    pipx
     ripgrep
     rmpc
     rsync
@@ -49,18 +48,21 @@ in
     xcode-install
     yazi
     yt-dlp
+    skhd
     zoxide
     starship
+
     # Development & Build Tools
     bun
     eslint_d
-    fnm
     flutter
+    fnm
     go
     golangci-lint
     gosimports
     jujutsu
     lua-language-server
+    ngrok
     nixfmt-rfc-style
     nodejs
     prettierd
@@ -70,9 +72,11 @@ in
 
     # GUI Applications
     # vivaldi
+    alacritty
     alt-tab-macos
     appcleaner
     brave
+    karabiner-elements
     keycastr
     kitty
     neovim
@@ -80,8 +84,6 @@ in
     qutebrowser
     raycast
     vesktop
-    karabiner-elements
-    wezterm
   ];
 
   # Nerd Fonts
