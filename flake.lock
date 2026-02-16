@@ -104,17 +104,16 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1770426948,
-        "narHash": "sha256-1pgBoNOTvv9jJU7OfGd9Dztdrz5oUveBuDM0A4iBIbE=",
+        "lastModified": 1771031035,
+        "narHash": "sha256-jBoONnChcWxG8PEVhkPiVMeXB8d57oyVfQCCaWtuhv8=",
         "owner": "LGUG2Z",
         "repo": "komorebi-for-mac",
-        "rev": "6e324b63cc475d8b53d38c007732c3caafe2730a",
+        "rev": "9087d6874229841674d4aa448ef56b110d677f61",
         "type": "github"
       },
       "original": {
         "owner": "LGUG2Z",
         "repo": "komorebi-for-mac",
-        "rev": "6e324b63cc475d8b53d38c007732c3caafe2730a",
         "type": "github"
       }
     },

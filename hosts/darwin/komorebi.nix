@@ -57,7 +57,7 @@
               layout_options = {
                 scrolling = {
                   columns = 2;
-                  center_focused_column = true;
+                  # center_focused_column = true;
                 };
               };
             }

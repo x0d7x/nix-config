@@ -6,7 +6,7 @@
 
 {
   services.aerospace = {
-    # enable = true;
+    enable = true;
     # package = pkgs.aerospace;
     settings = {
       # Core options with structured nix-darwin settings
@@ -36,12 +36,12 @@
       ];
 
       gaps = {
-        inner.horizontal = 12;
-        inner.vertical = 12;
-        outer.left = 14;
-        outer.bottom = 15;
+        inner.horizontal = 20;
+        inner.vertical = 20;
+        outer.left = 20;
+        outer.bottom = 20;
         outer.top = 35;
-        outer.right = 14;
+        outer.right = 20;
       };
 
       mode.main.binding = {
@@ -60,22 +60,20 @@
         alt-d = "workspace D";
         alt-q = "workspace Q";
         alt-s = "workspace S";
-        alt-m = "workspace M";
         alt-g = "workspace G";
         alt-t = "workspace T";
         alt-b = "workspace B";
-        alt-r = "macos-native-fullscreen";
-        alt-f = "fullscreen";
+        alt-f = "macos-native-fullscreen";
+        alt-m = "fullscreen";
         alt-n = "workspace N";
         alt-shift-b = "move-node-to-workspace B";
         alt-shift-d = "move-node-to-workspace D";
         alt-shift-q = "move-node-to-workspace Q";
-        alt-shift-m = "move-node-to-workspace M";
         alt-shift-s = "move-node-to-workspace S";
         alt-shift-t = "move-node-to-workspace T";
         alt-shift-n = "move-node-to-workspace N";
         alt-shift-g = "move-node-to-workspace G";
-        alt-shift-w = "exec-and-forget ~/.local/bin/chbg";
+        # alt-shift-w = "exec-and-forget ~/.local/bin/chbg";
         alt-tab = "workspace-back-and-forth";
         alt-shift-tab = "move-workspace-to-monitor --wrap-around next";
         alt-shift-semicolon = "mode service";
@@ -184,7 +182,7 @@
         }
         {
           "if".app-id = "com.smartcodeltd.stremio";
-          run = "move-node-to-workspace M";
+          run = "move-node-to-workspace N";
         }
         {
           "if".app-id = "dev.vencord.vesktop";
