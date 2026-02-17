@@ -16,7 +16,7 @@ in
     ./nix-settings.nix
     ./macos-defaults.nix
     # ./aerospace.nix
-    # ./komorebi.nix
+    ./komorebi.nix
     # ./hammerspoon.nix
   ];
 }
