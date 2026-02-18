@@ -14,7 +14,7 @@
       border = true;
       border_width = 3;
       border_radius = 13;
-      border_offset = 2;
+      border_offset = 1;
 
       # Layout settings - SCROLLING
       # default_layout = "Scrolling";
