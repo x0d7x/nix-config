@@ -8,6 +8,13 @@
     # nix-darwin.url = "github:x0d7x/nix-darwin/fix-karabiner-v15";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     komorebi.url = "github:LGUG2Z/komorebi-for-mac";
+    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
+    homebrew-core.url = "github:homebrew/homebrew-core";
+    homebrew-core.flake = false;
+    homebrew-cask.url = "github:homebrew/homebrew-cask";
+    homebrew-cask.flake = false;
+    homebrew-bundle.url = "github:homebrew/homebrew-bundle";
+    homebrew-bundle.flake = false;
   };
 
   outputs =

@@ -13,7 +13,7 @@ in
 
     # CLI Tools & Utilities
     # man
-    asciinema-agg
+    asciinema
     bat
     btop
     croc
@@ -39,6 +39,8 @@ in
     ripgrep
     rmpc
     rsync
+    skhd
+    starship
     stow
     tldr
     tokei
@@ -48,10 +50,7 @@ in
     xcode-install
     yazi
     yt-dlp
-    skhd
     zoxide
-    starship
-
     # Development & Build Tools
     bun
     eslint_d
@@ -72,17 +71,10 @@ in
 
     # GUI Applications
     # vivaldi
-    alacritty
-    alt-tab-macos
-    appcleaner
-    brave
     karabiner-elements
-    keycastr
     kitty
     neovim
-    obsidian
-    qutebrowser
-    raycast
+    brave
     vesktop
   ];
 

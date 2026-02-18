@@ -1,10 +1,17 @@
 {
   config,
+  inputs,
   pkgs,
   ...
 }:
 
 {
+  imports = [
+    inputs.komorebi.darwinModules.komorebi
+  ];
+  nixpkgs.overlays = [
+    inputs.komorebi.overlays.default
+  ];
   services.komorebi = {
     enable = true;
     logLevel = "info";

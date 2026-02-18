@@ -8,11 +8,7 @@
 
 let
   home = "/Users/${username}";
-
-  aldente = pkgs.aldente;
-  hidden-bar = pkgs.hidden-bar;
   mpd = pkgs.mpd;
-  shottr = pkgs.shottr;
 in
 {
   # Services & Daemons
@@ -35,7 +31,7 @@ in
         ProgramArguments = [
           "open"
           "-a"
-          "${aldente}/Applications/AlDente.app"
+          "${home}/Applications/AlDente.app"
         ];
         RunAtLoad = true;
         KeepAlive = false;
@@ -47,7 +43,7 @@ in
         ProgramArguments = [
           "open"
           "-a"
-          "${hidden-bar}/Applications/Hidden Bar.app"
+          "${home}/Applications/Hidden Bar.app"
         ];
         RunAtLoad = true;
         KeepAlive = false;
@@ -76,7 +72,7 @@ in
         ProgramArguments = [
           "open"
           "-a"
-          "${shottr}/Applications/Shottr.app"
+          "${home}/Applications/Shottr.app"
         ];
         RunAtLoad = true;
         KeepAlive = false;
@@ -99,9 +95,6 @@ in
   system.activationScripts.applications.text =
     let
       allPkgs = config.environment.systemPackages ++ [
-        aldente
-        hidden-bar
-        shottr
       ];
       env = pkgs.buildEnv {
         name = "system-applications";
