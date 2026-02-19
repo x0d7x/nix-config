@@ -1,76 +1,71 @@
 # Dox Nix-Darwin Configuration
 
-This repository contains my personal Nix-Darwin configuration for macOS. It leverages the power of Nix and nix-darwin to declaratively manage system settings, installed packages, running services, and even the macOS Dock. This approach ensures a reproducible and consistent development environment across different macOS machines.
-
-[![Desktop Screenshot](https://i.imgur.com/byek2K0.jpeg)](https://i.imgur.com/byek2K0.jpeg)
+This repository contains my personal Nix-Darwin configuration for macOS. It leverages Nix and nix-darwin to declaratively manage system settings, installed packages, services, and macOS preferences. This ensures a reproducible and consistent development environment across machines.
 
 ## Features
 
-*   **Declarative macOS Configuration:** Manage your entire macOS system configuration through Nix.
-*   **Package Management:** Define and install all your desired applications and tools using `nixpkgs`.
-*   **Service Management:** Configure and manage macOS background services.
-*   **System Settings:** Customize various macOS system settings to your preference.
-*   **Dock Configuration:** Specify the applications and stacks that appear in your macOS Dock.
-*   **Window Management:** Aerospace tiling window manager with custom keybindings, workspace management, and app-specific rules.
-*   **Status Bar:** Sketchybar for a highly customizable macOS status bar integrated with aerospace workspaces.
-*   **Terminal Multiplexer:** Tmux configured for efficient session management with Zsh as default shell.
-*   **Shell Optimization:** Zsh enhanced with plugins for improved productivity.
-*   **Reproducible Environment:** Easily replicate your macOS setup on new machines or after a fresh install.
+- **Declarative macOS Configuration** — Manage your entire macOS system through Nix
+- **Package Management** — Hybrid approach using both Nix packages and Homebrew via nix-homebrew
+- **Window Management** — Komorebi tiling window manager (Aerospace also available)
+- **Shell** — Zsh (Fish shell configuration also available)
+- **Terminal Multiplexer** — Tmux with custom keybindings and session management
+- **System Customization** — macOS defaults, dock, and services
+- **Reproducible** — Easily replicate your setup on new machines
 
 ## Prerequisites
 
-Before you can use this configuration, you need to have the Nix package manager installed on your macOS system.
+- Nix package manager installed
+- macOS system
 
-*   **Nix Package Manager:** Follow the official installation guide on the [NixOS website](https://nixos.org/download.html).
+## Installation
 
-## Installation and Usage
+```bash
+# Clone the repository
+git clone https://github.com/x0d7x/nix-config.git ~/.config/nix
 
-To apply this Nix-Darwin configuration to your macOS system, follow these steps:
+# Apply the configuration
+cd ~/.config/nix
+nix run nix-darwin -- switch --flake .#dox
+```
 
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/x0d7x/nix-config.git ~/.config/nix 
-    ```
+## Packages
 
-2.  **Navigate to the configuration directory:**
-    ```bash
-    cd ~/.config/nix
-    ```
+### CLI Tools
+asciinema, bat, btop, croc, curlie, duf, eza, fastfetch, fd, ffmpeg, fzf, git, gitleaks, gnupg, jq, lazygit, mas, mkalias, mpd, mpv, pass, ripgrep, rmpc, rsync, skhd, starship, stow, tldr, tokei, tree, uv, wget, yazi, yt-dlp, zoxide
 
-3.  **Apply the configuration:**
-    ```bash
-    nix run nix-darwin -- switch --flake .#dox
-    ```
-    This command will build and activate the `dox` configuration defined in `flake.nix`. You may be prompted for your administrator password.
+### Development
+bun, eslint_d, flutter, fnm, go, golangci-lint, gosimports, jujutsu, lua-language-server, ngrok, nixfmt-rfc-style, nodejs, prettierd, rustup, tailwindcss-language-server, typescript-language-server
+
+### GUI Applications
+karabiner-elements, kitty, neovim, brave, vesktop
 
 ## Project Structure
 
-The repository is organized as follows:
+```
+.
+├── flake.nix              # Flake entry point
+├── flake.lock             # Locked dependencies
+├── lib/
+│   └── mkDarwin.nix       # Helper to build darwin config
+├── hosts/darwin/          # macOS-specific configuration
+│   ├── settings.nix       # Main settings (imports other modules)
+│   ├── nix-settings.nix  # Nix-specific settings
+│   ├── macos-defaults.nix # macOS system defaults
+│   ├── homebrew.nix      # Homebrew packages via nix-homebrew
+│   ├── komorebi.nix      # Komorebi window manager config
+│   ├── pkgs.nix          # Nix packages to install
+│   └── services.nix      # macOS services
+└── apps/                  # User-level application configs
+    ├── config.nix         # Imports shell and tmux configs
+    ├── tmux/              # Tmux configuration
+    └── zsh/               # Zsh shell configuration
+        └── shell.nix      # Zsh config (Fish configs also available in fish/)
+```
 
-*   `flake.nix`: The entry point for the Nix flake, defining the inputs and outputs of the configuration.
-*   `flake.lock`: Automatically generated by Nix, locking the versions of all flake inputs for reproducibility.
-*   `hosts/darwin/`: Contains host-specific configuration modules for macOS.
-    *   `aerospace.nix`: Configuration for the Aerospace tiling window manager, including keybindings and app rules.
-    *   `dock.nix`: Defines the applications and stacks to be placed in the macOS Dock.
-    *   `macos-defaults.nix`: Custom macOS system defaults and user preferences.
-    *   `nix-settings.nix`: Nix-specific settings and configurations.
-    *   `pkgs.nix`: Specifies the Nix packages to be installed on the system.
-    *   `services.nix`: Configures various macOS services and launchd agents.
-    *   `settings.nix`: Main settings file importing other configuration modules.
-*   `apps/`: User-level application configurations.
-    *   `config.nix`: Imports tmux and zsh configurations.
-    *   `tmux/`: Tmux configuration files.
-    *   `zsh/`: Zsh shell configuration files.
-*   `lib/mkDarwin.nix`: A custom Nix library function used to construct the `nix-darwin` system configuration.
+## Architecture
 
-## Contributing
+The flake defines a single Darwin host (`dox`) running on x86_64-darwin. Configuration is split into:
+- **hosts/darwin/** — System-level settings (packages, services, window manager, macOS defaults, Homebrew)
+- **apps/** — User-level configs (shell, tmux)
 
-If you plan to contribute to this configuration (e.g., for a shared dotfiles setup), consider the following:
-
-*   **Fork the repository.**
-*   **Create a new branch** for your changes.
-*   **Test your changes** thoroughly before submitting a pull request.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
+Both Zsh and Fish shell configurations are provided. Zsh is currently active.
