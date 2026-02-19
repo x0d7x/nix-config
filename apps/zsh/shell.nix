@@ -12,6 +12,7 @@
   };
   programs.zsh = {
     enable = true;
+    # enableBashIntegration = true;
     enableCompletion = true;
     enableFastSyntaxHighlighting = true;
     interactiveShellInit = lib.strings.concatStrings (
@@ -20,6 +21,9 @@
         (builtins.readFile ./fzf)
         (builtins.readFile ./func)
         (builtins.readFile ./.zshrc)
+        # (builtins.readFile ./fish/aliases.fish)
+        # (builtins.readFile ./fish/fzf.fish)
+        # (builtins.readFile ./fish/config.fish)
       ])
     );
     promptInit = ''
