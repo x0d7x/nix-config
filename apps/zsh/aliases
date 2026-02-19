@@ -34,3 +34,8 @@ alias bnrm="bun remove"
 # nix aliases
 alias nsw="sudo darwin-rebuild switch --flake .#dox"
 alias nfu="nix flake update"
+# brew aliases
+alias brs="brew search"
+alias bri="brew install"
+alias brt="brew tap"
+

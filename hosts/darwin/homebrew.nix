@@ -45,18 +45,18 @@
       require_sha = true;
     };
     casks = [
-      "alacritty"
       "aldente"
       "appcleaner"
       "hiddenbar"
       "keycastr"
       "obsidian"
       "qutebrowser"
+      "zen"
       "raycast"
       "shottr"
       "stremio"
       "topnotch"
-      # "obs"
+      "obs"
     ];
   };
 }

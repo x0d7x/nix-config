@@ -25,30 +25,6 @@ in
   programs.man.enable = true;
   # All launchd agents
   launchd.user.agents = {
-    aldente = {
-      serviceConfig = {
-        Label = "user.aldente";
-        ProgramArguments = [
-          "open"
-          "-a"
-          "${home}/Applications/AlDente.app"
-        ];
-        RunAtLoad = true;
-        KeepAlive = false;
-      };
-    };
-    hidden-bar = {
-      serviceConfig = {
-        Label = "user.hidden-bar";
-        ProgramArguments = [
-          "open"
-          "-a"
-          "${home}/Applications/Hidden Bar.app"
-        ];
-        RunAtLoad = true;
-        KeepAlive = false;
-      };
-    };
     mpd = {
       serviceConfig = {
         Label = "user.mpd";
@@ -64,18 +40,6 @@ in
         EnvironmentVariables = {
           HOME = "${home}";
         };
-      };
-    };
-    shottr = {
-      serviceConfig = {
-        Label = "user.shottr";
-        ProgramArguments = [
-          "open"
-          "-a"
-          "${home}/Applications/Shottr.app"
-        ];
-        RunAtLoad = true;
-        KeepAlive = false;
       };
     };
 
