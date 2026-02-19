@@ -21,9 +21,10 @@
         (builtins.readFile ./fzf)
         (builtins.readFile ./func)
         (builtins.readFile ./.zshrc)
-        # (builtins.readFile ./fish/aliases.fish)
-        # (builtins.readFile ./fish/fzf.fish)
-        # (builtins.readFile ./fish/config.fish)
+        # (builtins.readFile ../fish/aliases.fish)
+        # (builtins.readFile ../fish/fzf.fish)
+        # (builtins.readFile ../fish/config.fish)
+        # (builtins.readFile ../fish/functions/kitm.fish)
       ])
     );
     promptInit = ''

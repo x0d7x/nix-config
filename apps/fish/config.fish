@@ -14,6 +14,8 @@ set -gx XDG_CACHE_HOME "$HOME/.cache"
 # bun
 set -gx BUN_INSTALL "$HOME/.bun"
 set -gx PATH "$BUN_INSTALL/bin" $PATH
+set -gx PATH "$HOME/.local/bin" $PATH
+
 
 # Go
 set -gx GOPATH "$HOME/go"
@@ -28,7 +30,7 @@ set -gx PATH "$CARGO_HOME/bin" $PATH
 # set -gx NVM_DIR "$HOME/.nvm"
 
 # Fastfetch
-fastfetch --version 2>/dev/null; and fastfetch --load-config primary 2>/dev/null
+# fastfetch --version 2>/dev/null; and fastfetch --load-config primary 2>/dev/null
 
 # Kitten themes (if using kitty)
 # kitty +kitten themes --cache-only

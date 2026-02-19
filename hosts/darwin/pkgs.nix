@@ -40,7 +40,6 @@ in
     rmpc
     rsync
     skhd
-    starship
     stow
     tldr
     tokei
@@ -51,6 +50,7 @@ in
     yazi
     yt-dlp
     zoxide
+
     # Development & Build Tools
     bun
     eslint_d
@@ -72,6 +72,7 @@ in
     # GUI Applications
     # vivaldi
     karabiner-elements
+    discord
     kitty
     neovim
     brave
