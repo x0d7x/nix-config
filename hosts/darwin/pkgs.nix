@@ -26,8 +26,10 @@ in
     fontconfig
     fx
     fzf
+    gh
     git
     gitleaks
+    glow
     gnupg
     jq
     lazygit
@@ -39,7 +41,6 @@ in
     ripgrep
     rmpc
     rsync
-    skhd
     stow
     tldr
     tokei

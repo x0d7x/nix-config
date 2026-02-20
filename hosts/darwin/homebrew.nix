@@ -27,8 +27,12 @@
     enable = true;
     taps = [
       # "lgug2z/tap"
+      "acsandmann/tap"
+      # "tmuxpack/tpack"
     ];
     brews = [
+      "rift"
+      # "tmuxpack/tpack/tpack"
     ];
     # masApps = {
     #   "Spark" = 1176895641;
@@ -37,11 +41,11 @@
     onActivation = {
       cleanup = "zap";
       autoUpdate = false;
-      upgrade = false;
+      upgrade = true;
     };
     global.autoUpdate = false;
     caskArgs = {
-      appdir = "~/Applications";
+      appdir = "/Applications";
       require_sha = true;
     };
     casks = [
@@ -57,6 +61,9 @@
       "stremio"
       "topnotch"
       "obs"
+      "alacritty"
+      "hammerspoon"
+      "Cap"
     ];
   };
 }

@@ -43,17 +43,6 @@ in
       };
     };
 
-    skhd = {
-      serviceConfig = {
-        ProgramArguments = [
-          "${pkgs.skhd}/bin/skhd"
-          "-c"
-          "${home}/.config/skhd/skhdrc"
-        ];
-        RunAtLoad = true;
-        KeepAlive = true;
-      };
-    };
   };
 
   system.activationScripts.applications.text =

@@ -58,7 +58,7 @@
           workspaces = [
             {
               name = "T";
-              layout = "Scrolling";
+              layout = "BSP";
               tile = true;
               apply_window_based_work_area_offset = true;
               layout_options = {
@@ -67,9 +67,16 @@
                   # center_focused_column = true;
                 };
               };
+              initial_workspace_rules = [
+                {
+                  kind = "Exe";
+                  id = "kitty";
+                  matching_strategy = "Equals";
+                }
+              ];
             }
             {
-              name = "S";
+              name = "O";
               tile = true;
               apply_window_based_work_area_offset = true;
               layout_rules = {
@@ -82,6 +89,45 @@
                   center_focused_column = true;
                 };
               };
+              initial_workspace_rules = [
+                {
+                  id = "Obsidian";
+                  kind = "Exe";
+                  matching_strategy = "Equals";
+                }
+                {
+                  id = "OBS";
+                  kind = "Exe";
+                  matching_strategy = "Equals";
+                }
+              ];
+            }
+            {
+              name = "N";
+              tile = true;
+              apply_window_based_work_area_offset = true;
+              layout_rules = {
+                "1" = "BSP";
+                "4" = "Scrolling";
+              };
+              layout_options = {
+                scrolling = {
+                  columns = 2;
+                  center_focused_column = true;
+                };
+              };
+              initial_workspace_rules = [
+                {
+                  id = "Shottr";
+                  kind = "Exe";
+                  matching_strategy = "Equals";
+                }
+                {
+                  id = "Stremio";
+                  kind = "Exe";
+                  matching_strategy = "Equals";
+                }
+              ];
             }
             {
               name = "B";
@@ -97,6 +143,13 @@
                   center_focused_column = true;
                 };
               };
+              initial_workspace_rules = [
+                {
+                  kind = "Exe";
+                  id = "Brave";
+                  matching_strategy = "Equals";
+                }
+              ];
             }
             {
               name = "D";
@@ -112,6 +165,13 @@
                   center_focused_column = true;
                 };
               };
+              initial_workspace_rules = [
+                {
+                  kind = "Exe";
+                  id = "Vesktop";
+                  matching_strategy = "Equals";
+                }
+              ];
             }
           ];
         }
@@ -121,18 +181,19 @@
       # Floating applications
       floating_applications = [
         {
-          id = "com.apple.finder";
-          kind = "Class";
+          id = "Finder";
+          kind = "Exe";
+          matching_strategy = "Equals";
         }
         {
           id = "com.apple.Passwords";
           kind = "Class";
         }
         {
-          id = "net.freemacsoft.AppCleaner";
-          kind = "Class";
+          id = "AppCleaner";
+          kind = "Exe";
+          matching_strategy = "Equals";
         }
-
         {
           id = "Picture in Picture";
           kind = "Title";
@@ -147,104 +208,31 @@
           kind = "Exe";
           matching_strategy = "Equals";
         }
+        {
+          id = "Shottr";
+          kind = "Exe";
+          matching_strategy = "Equals";
+        }
       ];
 
-      # Application workspace assignments for named workspaces
-      # manage_rules = [
-      #   # Terminal workspace (T)
-      #   {
-      #     id = "org.alacritty";
-      #     kind = "Class";
-      #     workspace = "T";
-      #   }
-      #   {
-      #     id = "net.kovidgoyal.kitty";
-      #     kind = "Class";
-      #     workspace = "T";
-      #   }
-      #   {
-      #     id = "com.mitchellh.ghostty";
-      #     kind = "Class";
-      #     workspace = "T";
-      #   }
-      #   {
-      #     id = "com.github.wez.wezterm";
-      #     kind = "Class";
-      #     workspace = "T";
-      #   }
-      #
-      #   # Browser workspace (B)
-      #   {
-      #     id = "app.zen-browser.zen";
-      #     kind = "Class";
-      #     workspace = "B";
-      #   }
-      #   {
-      #     id = "com.brave.Browser";
-      #     kind = "Class";
-      #     workspace = "B";
-      #   }
-      #   {
-      #     id = "org.nixos.qutebrowser";
-      #     kind = "Class";
-      #     workspace = "B";
-      #   }
-      #
-      #   # Development workspace (D)
-      #   {
-      #     id = "md.obsidian";
-      #     kind = "Class";
-      #     workspace = "D";
-      #   }
-      #
-      #   # Media workspace (M)
-      #   {
-      #     id = "com.smartcodeltd.stremio";
-      #     kind = "Class";
-      #     workspace = "M";
-      #   }
-      #   {
-      #     id = "dev.vencord.vesktop";
-      #     kind = "Class";
-      #     workspace = "M";
-      #   }
-      #   {
-      #     id = "io.mpv";
-      #     kind = "Class";
-      #     workspace = "M";
-      #   }
-      #
-      #   # Screenshots workspace (S)
-      #   {
-      #     id = "cc.ffitch.shottr";
-      #     kind = "Class";
-      #     workspace = "S";
-      #   }
-      #   {
-      #     id = "com.obsproject.obs-studio";
-      #     kind = "Class";
-      #     workspace = "S";
-      #   }
-      #
-      # ];
-      #
-      # Enable komorebi-bar for status bar integration
-      # komorebi-bar = {
-      #   enable = true;
-      #   bars = {
-      #     main = {
-      #       config = {
-      #         monitor = 0;
-      #         # Basic bar configuration
-      #         position = "top";
-      #         height = 30;
-      #         background = {
-      #           opacity = 0.8;
-      #           blur_radius = 10;
-      #         };
-      #       };
-      #     };
-      #   };
     };
   };
+  # Enable komorebi-bar for status bar integration
+  # komorebi-bar = {
+  #   enable = true;
+  #   bars = {
+  #     main = {
+  #       config = {
+  #         monitor = 0;
+  #         # Basic bar configuration
+  #         position = "top";
+  #         height = 30;
+  #         background = {
+  #           opacity = 0.8;
+  #           blur_radius = 10;
+  #         };
+  #       };
+  #     };
+  #   };
+  # };
 }

@@ -38,10 +38,10 @@
       gaps = {
         inner.horizontal = 20;
         inner.vertical = 20;
-        outer.left = 20;
-        outer.bottom = 20;
+        outer.left = 30;
+        outer.bottom = 35;
         outer.top = 35;
-        outer.right = 20;
+        outer.right = 30;
       };
 
       mode.main.binding = {
@@ -73,7 +73,6 @@
         alt-shift-t = "move-node-to-workspace T";
         alt-shift-n = "move-node-to-workspace N";
         alt-shift-g = "move-node-to-workspace G";
-        # alt-shift-w = "exec-and-forget ~/.local/bin/chbg";
         alt-tab = "workspace-back-and-forth";
         alt-shift-tab = "move-workspace-to-monitor --wrap-around next";
         alt-shift-semicolon = "mode service";
@@ -181,7 +180,7 @@
           run = "layout floating";
         }
         {
-          "if".app-id = "com.smartcodeltd.stremio";
+          "if".app-id = "com.stremio.stremio-shell-macos";
           run = "move-node-to-workspace N";
         }
         {

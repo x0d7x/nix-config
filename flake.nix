@@ -5,6 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-25.05-darwin";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin.url = "github:nix-darwin/nix-darwin/nix-darwin-25.05";
+    nixpkgs-linux.url = "github:NixOS/nixpkgs/nixpkgs-25.05";
     # nix-darwin.url = "github:x0d7x/nix-darwin/fix-karabiner-v15";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     komorebi.url = "github:LGUG2Z/komorebi-for-mac";

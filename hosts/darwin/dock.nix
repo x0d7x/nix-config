@@ -11,7 +11,7 @@ in
   system.defaults.dock = {
     persistent-apps = [
       "${pkgs.kitty}/Applications/Kitty.app"
-      "${pkgs.brave}/Applications/Brave Browser.app"
+      "/Applications/Zen.app"
       "${home}/Applications/AppCleaner.app"
       "/System/Applications/System Settings.app"
     ];
