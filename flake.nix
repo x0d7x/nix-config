@@ -4,8 +4,8 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-25.05-darwin";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs-linux.url = "github:NixOS/nixpkgs/nixos-25.05";
     nix-darwin.url = "github:nix-darwin/nix-darwin/nix-darwin-25.05";
-    nixpkgs-linux.url = "github:NixOS/nixpkgs/nixpkgs-25.05";
     # nix-darwin.url = "github:x0d7x/nix-darwin/fix-karabiner-v15";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     komorebi.url = "github:LGUG2Z/komorebi-for-mac";
@@ -23,25 +23,35 @@
       self,
       nix-darwin,
       nixpkgs,
+      nixpkgs-linux,
       komorebi,
       ...
     }:
     let
       inherit (self) outputs;
-      libx = import ./lib/mkDarwin.nix {
+      libx = import ./lib/mkSystem.nix {
         inherit
           inputs
           nixpkgs
+          nixpkgs-linux
           outputs
           ;
       };
     in
     {
       darwinConfigurations = {
-        dox = libx.mkDarwin {
-          hostname = "dox";
+        dox = libx "dox" {
           system = "x86_64-darwin";
-          username = "dox";
+          user = "dox";
+          darwin = true;
+        };
+      };
+
+      nixosConfigurations = {
+        dox = libx "dox" {
+          system = "x86_64-linux";
+          user = "dox";
+          darwin = false;
         };
       };
     };

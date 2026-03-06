@@ -60,6 +60,8 @@
       "shottr"
       "stremio"
       "topnotch"
+      "kitty"
+      "brave-browser"
       "obs"
       "alacritty"
       "hammerspoon"

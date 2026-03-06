@@ -11,19 +11,12 @@ let
   mpd = pkgs.mpd;
 in
 {
-  # Services & Daemons
+  programs.man.enable = true;
+
   services.sketchybar = {
     enable = true;
   };
-  # nix darwin need to deal with 15v to make the grabber lunch agent work
-  # a PR of the  fix in my repo github.com:x0d7x/nix-darwin.git
-  # serv
-  #   enable = true;
-  # };
 
-  # Note: komorebi is managed by SKHD, not as a nix-darwin service
-  programs.man.enable = true;
-  # All launchd agents
   launchd.user.agents = {
     mpd = {
       serviceConfig = {
@@ -42,7 +35,6 @@ in
         };
       };
     };
-
   };
 
   system.activationScripts.applications.text =
